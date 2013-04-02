@@ -1,0 +1,9 @@
+colorscheme koehler
+set guifont=Monospace\ 13
+set lines=35 columns=110
+set nobackup
+set expandtab
+set shiftwidth=4
+set number
+
+autocmd VimEnter * NERDTree
