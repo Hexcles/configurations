@@ -6,56 +6,65 @@ Bundle 'gmarik/vundle'
 
 "minibufexpl
 Bundle 'fholgado/minibufexpl.vim'
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapWindowNavVim=1
+let g:miniBufExplMapCTabSwitchBufs=1
 
 "bufkill
 Bundle 'bufkill.vim'
-let g:BufKillOverrideCtrlCaret = 1
+let g:BufKillOverrideCtrlCaret=1
 cnoremap <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
 
 "nerdtree
 Bundle 'scrooloose/nerdtree'
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
-let NERDTreeWinSize = 18
+let NERDTreeWinSize=18
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "PHP coding
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'php-doc-upgrade'
 au FileType php
-    \ let g:pdv_cfg_Author = "Hexcles Ma <bob1211(at)gmail(dot)com>" |
-    \ let g:pdv_cfg_Copyright = "2013 QSC Tech" |
-    \ let g:pdv_cfg_License = "Proprietary" |
+    \ let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>" |
+    \ let g:pdv_cfg_Copyright="2013 QSC Tech" |
+    \ let g:pdv_cfg_License="Proprietary" |
     \ nnoremap <Leader>p :call PhpDocSingle()<CR> |
     \ vnoremap <Leader>p :call PhpDocRange()<CR>
 
 "YouCompleteMe
 Bundle 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/cpp/ycm/ycm_extra_conf_default.py'
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-let g:ycm_key_invoke_completion = '<C-k>'
+let g:ycm_global_ycm_extra_conf='/home/robot/.vim/bundle/YouCompleteMe/cpp/ycm/ycm_extra_conf_default.py'
+let g:ycm_min_num_of_chars_for_completion=3
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_key_list_select_completion=['<TAB>']
+let g:ycm_key_list_previous_completion=['<S-TAB>']
+let g:ycm_key_invoke_completion='<C-k>'
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
 "delimitMate
 Bundle 'Raimondi/delimitMate'
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 1
-let delimitMate_excluded_regions = "Comment,String"
-let delimitMate_balance_matchpairs = 1
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+let delimitMate_excluded_regions="Comment,String"
+let delimitMate_balance_matchpairs=1
 
 "syntastic
 Bundle 'scrooloose/syntastic'
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open=1
 let g:syntastic_loc_list_height=5
 nnoremap <Leader>e :Errors<CR>
 
 "vim-markdown
 Bundle 'plasticboy/vim-markdown'
+
+"vim-css3-syntax
+Bundle "hail2u/vim-css3-syntax"
+
+"vim-css-color
+Bundle "skammer/vim-css-color"
+
+"vim-less
+Bundle "groenewege/vim-less"
 
 set concealcursor=inv
 set conceallevel=2
