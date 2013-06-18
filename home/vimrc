@@ -6,13 +6,20 @@ Bundle 'gmarik/vundle'
 
 "minibufexpl
 Bundle 'fholgado/minibufexpl.vim'
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapCTabSwitchBufs=1
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+noremap <C-TAB> :MBEbf<CR>
+noremap <C-S-TAB> :MBEbb<CR>
 
 "bufkill
-Bundle 'bufkill.vim'
-let g:BufKillOverrideCtrlCaret=1
-cnoremap <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
+"Bundle 'bufkill.vim'
+"let g:BufKillOverrideCtrlCaret=1
+"cnoremap <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
+cnoremap <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
+cnoremap <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
+cnoremap <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
 
 "nerdtree
 Bundle 'scrooloose/nerdtree'
