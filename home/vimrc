@@ -10,8 +10,8 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
-noremap <C-TAB> :MBEbf<CR>
-noremap <C-S-TAB> :MBEbb<CR>
+noremap <C-TAB> :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 
 "bufkill
 "Bundle 'bufkill.vim'
