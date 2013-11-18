@@ -26,6 +26,7 @@ Bundle 'scrooloose/nerdtree'
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 let NERDTreeWinSize=18
+let NERDTreeChDirMode=2
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "PHP coding
