@@ -12,11 +12,6 @@ noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 noremap <C-TAB> :MBEbn<CR>
 noremap <C-S-TAB> :MBEbp<CR>
-
-"bufkill
-"Bundle 'bufkill.vim'
-"let g:BufKillOverrideCtrlCaret=1
-"cnoremap <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
 cnoremap <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
 cnoremap <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
 cnoremap <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
