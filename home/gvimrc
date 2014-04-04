@@ -6,4 +6,7 @@ set expandtab
 set shiftwidth=4
 set number
 
+"IMPORTANT! Fix the confliction between preview and MiniBufExpl
+let g:miniBufExplBuffersNeeded = 0
+
 autocmd VimEnter * NERDTree

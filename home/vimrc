@@ -29,7 +29,7 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'php-doc-upgrade'
 au FileType php
     \ let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>" |
-    \ let g:pdv_cfg_Copyright="2013 QSC Tech" |
+    \ let g:pdv_cfg_Copyright="2014 QSC Tech" |
     \ let g:pdv_cfg_License="Proprietary" |
     \ nnoremap <Leader>p :call PhpDocSingle()<CR> |
     \ vnoremap <Leader>p :call PhpDocRange()<CR>
@@ -68,10 +68,16 @@ Bundle 'plasticboy/vim-markdown'
 Bundle "hail2u/vim-css3-syntax"
 
 "vim-css-color
-Bundle "skammer/vim-css-color"
+Bundle "ap/vim-css-color"
 
 "vim-less
 Bundle "groenewege/vim-less"
+
+"manpageview
+Bundle "dkasak/manpageview"
+
+"vim-python-virtualenv
+Bundle "lambdalisue/vim-python-virtualenv"
 
 set concealcursor=inv
 set conceallevel=2
