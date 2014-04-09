@@ -15,6 +15,7 @@ noremap <C-S-TAB> :MBEbp<CR>
 cnoremap <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
 cnoremap <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
 cnoremap <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
+let g:miniBufExplShowBufNumbers = 0
 
 "nerdtree
 Bundle 'scrooloose/nerdtree'

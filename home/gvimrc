@@ -10,3 +10,11 @@ set number
 let g:miniBufExplBuffersNeeded = 0
 
 autocmd VimEnter * NERDTree
+
+"Force prompt before quit (by :q) under GUI
+fun! QuitPrompt()
+	let choice = confirm("Really quit VIM?", "&Yes\n&No", 1)
+	if choice == 1 | qall | endif
+endfun
+
+nnoremap :q<cr> :call QuitPrompt()<cr>
