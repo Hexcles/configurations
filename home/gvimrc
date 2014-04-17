@@ -1,4 +1,5 @@
-colorscheme koehler
+"set background=dark
+colorscheme molokai
 set guifont=Monospace\ 13
 set lines=35 columns=110
 set nobackup
@@ -7,7 +8,7 @@ set shiftwidth=4
 set number
 
 "IMPORTANT! Fix the confliction between preview and MiniBufExpl
-let g:miniBufExplBuffersNeeded = 0
+let g:miniBufExplBuffersNeeded=0
 
 autocmd VimEnter * NERDTree
 
