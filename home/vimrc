@@ -1,3 +1,4 @@
+set undodir=$HOME/.vim/undo
 "vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -40,7 +41,7 @@ Plugin 'hdima/python-syntax'
 
 "YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf='/home/robot/.vim/bundle/YouCompleteMe/cpp/ycm/ycm_extra_conf_default.py'
+let g:ycm_global_ycm_extra_conf='/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
 let g:ycm_min_num_of_chars_for_completion=3
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion=['<TAB>']

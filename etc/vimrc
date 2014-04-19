@@ -26,6 +26,7 @@ set noincsearch
 set modeline
 set hidden
 set confirm
+set noundofile
 
 noremap <Down> gj
 noremap <Up> gk
