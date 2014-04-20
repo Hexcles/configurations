@@ -30,12 +30,12 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 "PHP coding
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'php-doc-upgrade'
-au FileType php
+au FileType php <buffer>
     \ let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>" |
     \ let g:pdv_cfg_Copyright="2014 QSC Tech" |
     \ let g:pdv_cfg_License="Proprietary" |
-    \ nnoremap <Leader>p :call PhpDocSingle()<CR> |
-    \ vnoremap <Leader>p :call PhpDocRange()<CR>
+    \ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
+    \ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
 "Python coding
 Plugin 'hdima/python-syntax'
@@ -44,11 +44,14 @@ Plugin 'hdima/python-syntax'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
 let g:ycm_min_num_of_chars_for_completion=3
-let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_key_list_select_completion=['<TAB>']
 let g:ycm_key_list_previous_completion=['<S-TAB>']
 let g:ycm_key_invoke_completion='<C-k>'
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+au FileType c,cpp
+    \ nnoremap <buffer> <Leader>e :YcmDiags<CR>
 
 "delimitMate
 Plugin 'Raimondi/delimitMate'
