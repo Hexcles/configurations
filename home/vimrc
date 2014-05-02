@@ -1,39 +1,60 @@
+"Fix alt/meta key in GNOME terminal
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+"Set a very short keycode timeout so that <A-x> will not be confused with <ESC>x
+set ttimeout ttimeoutlen=50
+
 "persistent undo
 set undofile
 set undodir=$HOME/.vim/undo
 
-set concealcursor=inv
-set conceallevel=2
+"preview window
 set previewheight=2
 
-"vundle
+"window(split) navigation and resizing
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+noremap <A-h> <C-w><
+noremap <A-j> <C-W>-
+noremap <A-k> <C-W>+
+noremap <A-l> <C-w>>
+
+"start Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Plugin 'gmarik/vundle'
 
 "minibufexpl
+"Multi buffer explorer
 Plugin 'fholgado/minibufexpl.vim'
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
-noremap <C-TAB> :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
-cnoremap <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
-cnoremap <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
-cnoremap <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
+noremap <C-TAB> :bn<CR>
+noremap <C-S-TAB> :bp<CR>
+"Replace bd/bw/bun commands (remember that commandline mode does not only
+"contain : )
+cnorea <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
+cnorea <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
+cnorea <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
 let g:miniBufExplShowBufNumbers = 0
 
 "nerdtree
+"File browser
 Plugin 'scrooloose/nerdtree'
-let NERDTreeMinimalUI=1
-let NERDTreeShowBookmarks=1
-let NERDTreeWinSize=18
-let NERDTreeChDirMode=2
-nnoremap <Leader>n :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeShowBookmarks = 1
+let NERDTreeWinSize = 18
+let NERDTreeChDirMode = 2
+noremap <Leader>n :NERDTreeToggle<CR>
 
 "indentLine
+"Show indent level lines
 Plugin 'Yggdroot/indentLine'
 
 "PHP coding
@@ -43,50 +64,55 @@ let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>"
 let g:pdv_cfg_Copyright="2014 QSC Tech"
 let g:pdv_cfg_License="Proprietary"
 au FileType php 
-    \ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
-    \ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
+	\ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
+	\ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
 "Python coding
 "Plugin 'hdima/python-syntax'
-let python_highlight_all=1
+let python_highlight_all = 1
 
 "YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf='/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
-let g:ycm_min_num_of_chars_for_completion=3
-"let g:ycm_autoclose_preview_window_after_completion=1
-"let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_key_list_select_completion=['<TAB>']
-let g:ycm_key_list_previous_completion=['<S-TAB>']
-let g:ycm_key_invoke_completion='<C-k>'
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
+let g:ycm_min_num_of_chars_for_completion = 3
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_key_list_select_completion = ['<TAB>']
+"let g:ycm_key_list_previous_completion = ['<S-TAB>']
+let g:ycm_key_invoke_completion = '<C-k>'
+noremap <F5> :YcmForceCompileAndDiagnostics<CR>
 au FileType c,cpp
-    \ nnoremap <buffer> <Leader>e :YcmDiags<CR>
+	\ noremap <buffer> <Leader>e :YcmDiags<CR>
 
 "delimitMate
+" Match pairs of symbols
 Plugin 'Raimondi/delimitMate'
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-let delimitMate_excluded_regions="Comment,String"
-let delimitMate_balance_matchpairs=1
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+let delimitMate_excluded_regions = "Comment,String"
+let delimitMate_balance_matchpairs = 1
 
 "syntastic
+"Error highlighting
 Plugin 'scrooloose/syntastic'
 "This must be disabled! Otherwise when openning C/C++ files,
 "syntastic will use its own checker to run a check, overwrite YCM.
-"let g:syntastic_check_on_open=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_python_checkers=['pyflakes']
-nnoremap <Leader>e :Errors<CR>
+"let g:syntastic_check_on_open = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_python_checkers = ['pyflakes']
+noremap <Leader>e :Errors<CR>
 
 "vim-markdown
+"Advanced support for Markdown (e.g. navigation)
 Plugin 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
 
-"vim-css3-syntax (including partial Scss)
+"vim-css3-syntax
+"Full CSS3 support including partial Scss
 Plugin 'hail2u/vim-css3-syntax'
 
 "vim-css-color
+"Show background color for CSS color definitions
 Plugin 'ap/vim-css-color'
 
 "vim-less
@@ -96,27 +122,40 @@ Plugin 'groenewege/vim-less'
 Plugin 'wavded/vim-stylus'
 
 "manpageview
+"Show man page at cursor
 Plugin 'dkasak/manpageview'
 
 "vim-python-virtualenv
 "Plugin 'lambdalisue/vim-python-virtualenv'
 
 "django.vim
+"Django template syntax support
 Plugin 'django.vim'
 
 "vim-jade
 Plugin 'digitaltoad/vim-jade'
-au FileType jade
-    \ setlocal shiftwidth=2
 
 "inline_edit
+"Automatically switch to other syntax inside embedded code (e.g. HTML
+"scripts)
 Plugin 'AndrewRadev/inline_edit.vim'
 
 "vim-easymotion
+"Quick move motion support
 Plugin 'Lokaltog/vim-easymotion'
 
+"guessindent
+"Guess indention of file
+Plugin 'ogier/guessindent'
+let g:guessindent_prefer_tabs = 1
+"FileType is needed since some ftplugin (e.g. Python) will override indention
+"settings
+autocmd BufReadPost,FileType * GuessIndent
+
 "molokai
+"A color theme (only used in gvim)
 Plugin 'tomasr/molokai'
 
 call vundle#end()
 filetype plugin indent on
+"end Vundle

@@ -13,9 +13,9 @@ let g:miniBufExplBuffersNeeded=0
 autocmd VimEnter * NERDTree
 
 "Force prompt before quit (by :q) under GUI
-fun! QuitPrompt()
-	let choice = confirm("Really quit VIM?", "&Yes\n&No", 1)
+function! QuitPrompt()
+	let choice = confirm("Do you really want to quit VIM?", "&Yes\n&No", 1)
 	if choice == 1 | qall | endif
-endfun
+endfunction
 
-nnoremap :q<cr> :call QuitPrompt()<cr>
+cnorea <expr> q (getcmdtype() == ':' ? 'call QuitPrompt()' : 'q')
