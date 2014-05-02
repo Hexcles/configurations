@@ -1,9 +1,15 @@
+"persistent undo
 set undofile
 set undodir=$HOME/.vim/undo
+
+set concealcursor=inv
+set conceallevel=2
+set previewheight=2
+
 "vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 Plugin 'gmarik/vundle'
 
 "minibufexpl
@@ -27,18 +33,22 @@ let NERDTreeWinSize=18
 let NERDTreeChDirMode=2
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
+"indentLine
+Plugin 'Yggdroot/indentLine'
+
 "PHP coding
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'php-doc-upgrade'
-au FileType php <buffer>
-    \ let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>" |
-    \ let g:pdv_cfg_Copyright="2014 QSC Tech" |
-    \ let g:pdv_cfg_License="Proprietary" |
+let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>"
+let g:pdv_cfg_Copyright="2014 QSC Tech"
+let g:pdv_cfg_License="Proprietary"
+au FileType php 
     \ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
     \ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
 "Python coding
-Plugin 'hdima/python-syntax'
+"Plugin 'hdima/python-syntax'
+let python_highlight_all=1
 
 "YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
@@ -62,6 +72,8 @@ let delimitMate_balance_matchpairs=1
 
 "syntastic
 Plugin 'scrooloose/syntastic'
+"This must be disabled! Otherwise when openning C/C++ files,
+"syntastic will use its own checker to run a check, overwrite YCM.
 "let g:syntastic_check_on_open=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_python_checkers=['pyflakes']
@@ -69,8 +81,9 @@ nnoremap <Leader>e :Errors<CR>
 
 "vim-markdown
 Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
 
-"vim-css3-syntax
+"vim-css3-syntax (including partial Scss)
 Plugin 'hail2u/vim-css3-syntax'
 
 "vim-css-color
@@ -79,22 +92,31 @@ Plugin 'ap/vim-css-color'
 "vim-less
 Plugin 'groenewege/vim-less'
 
+"vim-stylus
+Plugin 'wavded/vim-stylus'
+
 "manpageview
 Plugin 'dkasak/manpageview'
 
 "vim-python-virtualenv
-Plugin 'lambdalisue/vim-python-virtualenv'
+"Plugin 'lambdalisue/vim-python-virtualenv'
 
 "django.vim
-"Plugin 'django.vim'
+Plugin 'django.vim'
 
 "vim-jade
 Plugin 'digitaltoad/vim-jade'
+au FileType jade
+    \ setlocal shiftwidth=2
+
+"inline_edit
+Plugin 'AndrewRadev/inline_edit.vim'
+
+"vim-easymotion
+Plugin 'Lokaltog/vim-easymotion'
 
 "molokai
 Plugin 'tomasr/molokai'
 
-set concealcursor=inv
-set conceallevel=2
-set previewheight=2
+call vundle#end()
 filetype plugin indent on
