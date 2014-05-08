@@ -35,14 +35,15 @@ Plugin 'gmarik/vundle'
 "minibufexpl
 "Multi buffer explorer
 Plugin 'fholgado/minibufexpl.vim'
-noremap <C-TAB> :bn<CR>
-noremap <C-S-TAB> :bp<CR>
+noremap <C-TAB> :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 "Replace bd/bw/bun commands (remember that commandline mode does not only
 "contain : )
 cnorea <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
 cnorea <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
 cnorea <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
 let g:miniBufExplShowBufNumbers = 0
+let g:miniBufExplCycleArround = 1
 
 "nerdtree
 "File browser
