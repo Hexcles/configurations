@@ -6,6 +6,7 @@ set nobackup
 set expandtab
 set shiftwidth=4
 set number
+set winaltkeys=no
 
 "IMPORTANT! Fix the confliction between preview and MiniBufExpl
 let g:miniBufExplBuffersNeeded=0

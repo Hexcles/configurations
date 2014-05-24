@@ -82,7 +82,7 @@ let g:ycm_min_num_of_chars_for_completion = 3
 "let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_invoke_completion = '<C-k>'
 noremap <F5> :YcmForceCompileAndDiagnostics<CR>
-au FileType c,cpp
+autocmd FileType c,cpp
 	\ noremap <buffer> <Leader>e :YcmDiags<CR>
 
 "delimitMate
@@ -151,7 +151,13 @@ Plugin 'ogier/guessindent'
 let g:guessindent_prefer_tabs = 1
 "FileType is needed since some ftplugin (e.g. Python) will override indention
 "settings
-autocmd BufReadPost,FileType * GuessIndent
+autocmd BufReadPost,BufEnter,FileType * GuessIndent
+
+"vim-rst-tables
+"Plugin 'nvie/vim-rst-tables'
+
+"vim-table-mode
+Plugin 'dhruvasagar/vim-table-mode'
 
 "molokai
 "A color theme (only used in gvim)
