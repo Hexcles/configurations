@@ -45,6 +45,9 @@ cnorea <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
 let g:miniBufExplShowBufNumbers = 0
 let g:miniBufExplCycleArround = 1
 
+"lusty (LustyExplorer + LustyJuggler)
+Plugin 'sjbach/lusty'
+
 "nerdtree
 "File browser
 Plugin 'scrooloose/nerdtree'
