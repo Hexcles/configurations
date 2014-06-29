@@ -16,6 +16,9 @@ set undodir=$HOME/.vim/undo
 "preview window
 set previewheight=2
 
+"always show statusline
+set laststatus=2
+
 "window(split) navigation and resizing
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -34,16 +37,24 @@ Plugin 'gmarik/vundle'
 
 "minibufexpl
 "Multi buffer explorer
-Plugin 'fholgado/minibufexpl.vim'
-noremap <C-TAB> :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
+"Plugin 'fholgado/minibufexpl.vim'
+"noremap <C-TAB> :MBEbn<CR>
+"noremap <C-S-TAB> :MBEbp<CR>
 "Replace bd/bw/bun commands (remember that commandline mode does not only
 "contain : )
-cnorea <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
-cnorea <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
-cnorea <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
-let g:miniBufExplShowBufNumbers = 0
-let g:miniBufExplCycleArround = 1
+"cnorea <expr> bd (getcmdtype() == ':' ? 'MBEbd' : 'bd')
+"cnorea <expr> bw (getcmdtype() == ':' ? 'MBEbw' : 'bd')
+"cnorea <expr> bun (getcmdtype() == ':' ? 'MBEbun' : 'bd')
+"let g:miniBufExplShowBufNumbers = 0
+"let g:miniBufExplCycleArround = 1
+
+"bufkill.vim
+Plugin 'bufkill.vim'
+cnorea <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
+cnorea <expr> bw (getcmdtype() == ':' ? 'BW' : 'bd')
+cnorea <expr> bun (getcmdtype() == ':' ? 'BUN' : 'bd')
+noremap <C-TAB> :bn<CR>
+noremap <C-S-TAB> :bp<CR>
 
 "lusty (LustyExplorer + LustyJuggler)
 Plugin 'sjbach/lusty'
@@ -67,7 +78,7 @@ Plugin 'php-doc-upgrade'
 let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>"
 let g:pdv_cfg_Copyright="2014 QSC Tech"
 let g:pdv_cfg_License="Proprietary"
-au FileType php 
+au FileType php
 	\ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
 	\ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
@@ -81,8 +92,6 @@ let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/ycm_ext
 let g:ycm_min_num_of_chars_for_completion = 3
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_key_list_select_completion = ['<TAB>']
-"let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_invoke_completion = '<C-k>'
 noremap <F5> :YcmForceCompileAndDiagnostics<CR>
 autocmd FileType c,cpp
@@ -161,6 +170,14 @@ autocmd BufReadPost,BufEnter,FileType * GuessIndent
 
 "vim-table-mode
 Plugin 'dhruvasagar/vim-table-mode'
+
+"vim-airline
+Plugin 'bling/vim-airline'
+
+"vim-bufferline
+Plugin 'bling/vim-bufferline'
+let g:bufferline_show_bufnr = 0
+let g:bufferline_rotate = 2
 
 "molokai
 "A color theme (only used in gvim)
