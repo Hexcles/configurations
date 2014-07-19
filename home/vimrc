@@ -91,7 +91,7 @@ Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
 let g:ycm_min_num_of_chars_for_completion = 3
 "let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-k>'
 noremap <F5> :YcmForceCompileAndDiagnostics<CR>
 autocmd FileType c,cpp
@@ -177,7 +177,7 @@ Plugin 'bling/vim-airline'
 "vim-bufferline
 Plugin 'bling/vim-bufferline'
 let g:bufferline_show_bufnr = 0
-let g:bufferline_rotate = 2
+let g:bufferline_rotate = 1
 
 "molokai
 "A color theme (only used in gvim)
