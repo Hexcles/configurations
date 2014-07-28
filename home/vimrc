@@ -1,39 +1,8 @@
-"Fix alt/meta key in GNOME terminal
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
-"Set a very short keycode timeout so that <A-x> will not be confused with <ESC>x
-set ttimeout ttimeoutlen=50
-
-"persistent undo
-set undofile
-set undodir=$HOME/.vim/undo
-
-"preview window
-set previewheight=2
-
-"always show statusline
-set laststatus=2
-
-"window(split) navigation and resizing
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
-noremap <A-h> <C-w><
-noremap <A-j> <C-W>-
-noremap <A-k> <C-W>+
-noremap <A-l> <C-w>>
-
 "start Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 "minibufexpl
 "Multi buffer explorer
@@ -83,7 +52,6 @@ au FileType php
 	\ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
 "Python coding
-"Plugin 'hdima/python-syntax'
 let python_highlight_all = 1
 
 "YouCompleteMe
@@ -165,7 +133,7 @@ let g:guessindent_prefer_tabs = 1
 "settings
 autocmd BufReadPost,BufEnter,FileType * GuessIndent
 
-"vim-rst-tables
+"vim-rst-tables (requires Python vim_bridge)
 "Plugin 'nvie/vim-rst-tables'
 
 "vim-table-mode
@@ -186,3 +154,35 @@ Plugin 'tomasr/molokai'
 call vundle#end()
 filetype plugin indent on
 "end Vundle
+
+"Fix alt/meta key in GNOME terminal
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+"Set a very short keycode timeout so that <A-x> will not be confused with <ESC>x
+set ttimeout ttimeoutlen=50
+
+"persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+"preview window
+set previewheight=2
+
+"always show statusline
+set laststatus=2
+
+"window(split) navigation and resizing
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+noremap <A-h> <C-w><
+noremap <A-j> <C-W>-
+noremap <A-k> <C-W>+
+noremap <A-l> <C-w>>
+
