@@ -1,8 +1,4 @@
 # ~/.profile
 
-# GNOME terminal supports 256color but does not announce that
-export TERM=xterm-256color
-# Force wine in 32bit
-export WINEARCH=win32
-# Force Firefox using OMTC
-export MOZ_USE_OMTC=1
+# Bash powerline
+source ~/bin/bash-powerline/bash-powerline.sh

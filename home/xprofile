@@ -1,0 +1,20 @@
+# ~/.xprofile
+
+# Setting up language for X
+export LANG=zh_CN.UTF-8
+
+# Setting up input method(fcitx)
+export XIM=fcitx
+export XIM_PROGRAM=fcitx
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+
+# GNOME terminal supports 256color but does not announce that
+export TERM=xterm-256color
+
+# Force wine in 32bit
+export WINEARCH=win32
+
+# Force Firefox using OMTC
+export MOZ_USE_OMTC=1
