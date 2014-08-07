@@ -1,0 +1,15 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# My shortcuts (ls alias will inherit from .profile)
+source ~/bin/aliases.sh
+
+# Bash powerline
+# (needs to repeat here, otherwise overridden by /etc/bash.bashrc)
+source ~/bin/bash-powerline/bash-powerline.sh
+
+echo $TERM

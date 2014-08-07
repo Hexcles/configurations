@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ln -sf `pwd`/home/bashrc ~/.bashrc
 ln -sf `pwd`/home/profile ~/.profile
 ln -sf `pwd`/home/xprofile ~/.xprofile
 ln -sf `pwd`/home/vimrc ~/.vimrc
