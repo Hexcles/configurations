@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Colorful $TERM (be careful with screen/tmux!)
+# (Must before bash-powerline)
 if [[ $COLORTERM == gnome-terminal && $TERM != screen* ]]; then
 	export TERM=xterm-256color
 fi
@@ -13,11 +14,5 @@ fi
 # My shortcut scripts
 source ~/bin/aliases.sh
 
-# Bash powerline (take care of screen/tmux)
-if [[ $TERM == screen-256color ]]; then
-	TERM=xterm-256color
-	source ~/bin/bash-powerline/bash-powerline.sh
-	TERM=screen-256color
-else
-	source ~/bin/bash-powerline/bash-powerline.sh
-fi
+# Bash powerline
+source ~/bin/bash-powerline/bash-powerline.sh
