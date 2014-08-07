@@ -1,6 +1,0 @@
-# ~/.profile
-
-alias ls='ls --color=auto'
-
-# Bash powerline
-source ~/bin/bash-powerline/bash-powerline.sh

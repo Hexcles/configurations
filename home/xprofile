@@ -10,9 +10,6 @@ export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 
-# GNOME terminal supports 256color but does not announce that
-export TERM=xterm-256color
-
 # Force wine in 32bit
 export WINEARCH=win32
 

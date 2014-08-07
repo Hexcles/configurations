@@ -5,11 +5,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# My shortcuts (ls alias will inherit from .profile)
+# Colorful $TERM (be careful with screen/tmux!)
+if [[ $COLORTERM == gnome-terminal && $TERM != screen* ]]; then
+	export TERM=xterm-256color
+fi
+
+# My shortcut scripts
 source ~/bin/aliases.sh
 
-# Bash powerline
-# (needs to repeat here, otherwise overridden by /etc/bash.bashrc)
-source ~/bin/bash-powerline/bash-powerline.sh
-
-echo $TERM
+# Bash powerline (take care of screen/tmux)
+if [[ $TERM == screen-256color ]]; then
+	TERM=xterm-256color
+	source ~/bin/bash-powerline/bash-powerline.sh
+	TERM=screen-256color
+else
+	source ~/bin/bash-powerline/bash-powerline.sh
+fi
