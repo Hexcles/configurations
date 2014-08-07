@@ -1,0 +1,4 @@
+# ~/.profile
+
+export WINEARCH=win32
+export MOZ_USE_OMTC=1
