@@ -16,3 +16,6 @@ source ~/bin/aliases.sh
 
 # Bash powerline
 source ~/bin/bash-powerline/bash-powerline.sh
+
+# Colorful ls
+alias ls='ls --color=auto'
