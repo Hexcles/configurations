@@ -14,4 +14,4 @@ export QT_IM_MODULE=fcitx
 export WINEARCH=win32
 
 # Force Firefox using OMTC
-export MOZ_USE_OMTC=1
+#export MOZ_USE_OMTC=1
