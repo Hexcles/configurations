@@ -1,10 +1,13 @@
 ! keycode/sym <code>/<sym> = <normal> <shift> <switch> <shift+switch>
 
+! use super as mod-switch
+keysym Alt_R = Mode_switch
+
 ! put tilde back...
 keysym Escape = Escape asciitilde
 
-! make shift-home as end
-keysym Home = Home End
+! make switch-home as end
+keysym Home = Home NoSymbol End
 
 ! remove Control and Lock modifiers
 remove Lock = Caps_Lock
