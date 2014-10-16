@@ -1,0 +1,23 @@
+! keycode/sym <code>/<sym> = <normal> <shift> <switch> <shift+switch>
+
+! put tilde back...
+keysym Escape = Escape asciitilde
+
+! make shift-home as end
+keysym Home = Home End
+
+! remove Control and Lock modifiers
+remove Lock = Caps_Lock
+remove Control = Control_L
+
+! make End as Control_L
+! (must before the next line, otherwise End becomes Lock)
+keysym End = Control_L
+
+! swap Caps_Lock and Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+
+! put modifiers back so that the new keys work
+add Lock = Caps_Lock
+add Control = Control_L
