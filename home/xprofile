@@ -16,4 +16,7 @@ export WINEARCH=win32
 # Force Firefox using OMTC
 #export MOZ_USE_OMTC=1
 
+# VDPAU for Intel
+export VDPAU_DRIVER=va_gl
+
 xmodmap ~/.xmodmaprc
