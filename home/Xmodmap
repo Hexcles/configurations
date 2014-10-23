@@ -7,7 +7,7 @@ keysym Alt_R = Mode_switch
 keysym Escape = Escape asciitilde
 
 ! make switch-home as end
-keysym Home = Home NoSymbol End
+keysym End = End NoSymbol Home
 
 ! remove Control and Lock modifiers
 remove Lock = Caps_Lock
@@ -15,7 +15,7 @@ remove Control = Control_L
 
 ! make End as Control_L
 ! (must before the next line, otherwise End becomes Lock)
-keysym End = Control_L
+keysym Home = Control_L
 
 ! swap Caps_Lock and Control_L
 keysym Control_L = Caps_Lock
