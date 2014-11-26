@@ -51,6 +51,9 @@ let delimitMate_balance_matchpairs = 1
 "vim-table-mode (toggled by \tm, and then start a line with ||)
 Plugin 'dhruvasagar/vim-table-mode'
 
+"NERDCommenter
+Plugin 'scrooloose/nerdcommenter'
+
 "--- Indent enhancement ---
 
 "indentLine (show indent lines)

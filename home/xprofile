@@ -18,3 +18,6 @@ export WINEARCH=win32
 
 # VDPAU for Intel
 export VDPAU_DRIVER=va_gl
+
+# map key
+(sleep 5 && xmodmap ~/.Xmodmap &)
