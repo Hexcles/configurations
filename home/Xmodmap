@@ -6,16 +6,13 @@ keysym Alt_R = Mode_switch
 ! put tilde back...
 keysym Escape = Escape asciitilde
 
-! make switch-home as end
-keysym End = End NoSymbol Home
-
 ! remove Control and Lock modifiers
 remove Lock = Caps_Lock
 remove Control = Control_L
 
-! make End as Control_L
-! (must before the next line, otherwise End becomes Lock)
-keysym Home = Control_L
+! make Home as Control_L
+! (must before the next line, otherwise Home becomes Lock)
+keysym Home = Control_L NoSymbol Home
 
 ! swap Caps_Lock and Control_L
 keysym Control_L = Caps_Lock
