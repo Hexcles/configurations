@@ -7,15 +7,19 @@
 
 # Colorful $TERM (be careful with screen/tmux!)
 # (Must before bash-powerline)
-if [[ $COLORTERM == gnome-terminal && $TERM != screen* ]]; then
+if [[ ($COLORTERM == gnome-terminal || $(cat /proc/$PPID/cmdline) == *gnome-terminal* )
+	&& $TERM != screen* ]]; then
 	export TERM=xterm-256color
 fi
 
-# My shortcut scripts
+# Colorful ls
+alias ls='ls --color=auto'
+
+# Colorful grep
+alias grep='grep --color=auto'
+
+# My other shortcut scripts
 source ~/bin/aliases.sh
 
 # Bash powerline
 source ~/bin/bash-powerline/bash-powerline.sh
-
-# Colorful ls
-alias ls='ls --color=auto'
