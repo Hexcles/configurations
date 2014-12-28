@@ -4,6 +4,9 @@ find . -name "*~" -delete
 
 for dotfile in `pwd`/home/*; do
 	echo Installing `basename $dotfile`
+	if [ -d ~/.`basename $dotfile` ]; then
+		rm -rf ~/.`basename $dotfile`
+	fi
 	ln -sf $dotfile ~/.`basename $dotfile`
 done
 
