@@ -9,9 +9,6 @@ set number
 set winaltkeys=no
 set guioptions-=T
 
-"IMPORTANT! Fix the confliction between preview and MiniBufExpl
-let g:miniBufExplBuffersNeeded=0
-
 let g:bufferline_show_bufnr=1
 
 autocmd VimEnter * NERDTree
