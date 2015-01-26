@@ -45,8 +45,8 @@ noremap <Leader>n :NERDTreeToggle<CR>
 Plugin 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-let delimitMate_excluded_regions = "Comment,String"
 let delimitMate_balance_matchpairs = 1
+au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 
 "vim-table-mode (toggled by \tm, and then start a line with ||)
 Plugin 'dhruvasagar/vim-table-mode'
