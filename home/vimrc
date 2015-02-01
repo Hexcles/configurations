@@ -54,6 +54,9 @@ Plugin 'dhruvasagar/vim-table-mode'
 "NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
 
+"ag.vim
+Plugin 'rking/ag.vim'
+
 "--- Indent enhancement ---
 
 "indentLine (show indent lines)
