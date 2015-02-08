@@ -153,6 +153,12 @@ filetype plugin indent on
 
 "--- Non-plugin settings ---
 
+"Use molokai for colorful terminals
+"(This has to be after Vundle section ends, otherwise cannot find scheme.)
+if &term =~ '.*256color'
+	colorscheme molokai
+endif
+
 "Fix alt/meta key in GNOME terminal
 let c='a'
 while c <= 'z'
