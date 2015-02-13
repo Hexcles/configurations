@@ -12,6 +12,7 @@ Plugin 'tomasr/molokai'
 
 "vim-airline
 Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 
 "vim-bufferline
 Plugin 'bling/vim-bufferline'
