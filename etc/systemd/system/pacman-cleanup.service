@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly cleanup of pacman cache and optimize database
+
+[Service]
+Type=oneshot
+Nice=19
+ExecStart=/usr/bin/paccache -r
+ExecStart=/usr/bin/paccache -ruk0
+ExecStart=/usr/bin/pacman-optimize

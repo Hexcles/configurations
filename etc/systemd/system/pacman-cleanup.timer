@@ -1,0 +1,7 @@
+[Unit]
+Description=Weekly cleanup of pacman cache and optimize database
+
+[Timer]
+OnCalendar=weekly
+AccuracySec=24h
+Persistent=true
