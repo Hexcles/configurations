@@ -5,3 +5,6 @@ Description=Weekly cleanup of pacman cache and optimize database
 OnCalendar=weekly
 AccuracySec=24h
 Persistent=true
+
+[Install]
+WantedBy=multi-user.target
