@@ -1,22 +1,22 @@
 ! keycode/sym <code>/<sym> = <normal> <shift> <switch> <shift+switch>
 
-! use super as mod-switch
-keysym Alt_R = Mode_switch
-
-! put tilde back...
-keysym Escape = Escape asciitilde
-
 ! remove Control and Lock modifiers
 remove Lock = Caps_Lock
 remove Control = Control_L
 
+! use Alt_R as mod-switch
+keycode 108 = Mode_switch
+
+! put tilde back...
+keycode 9 = Escape asciitilde
+
 ! make Home as Control_L
 ! (must before the next line, otherwise Home becomes Lock)
-keysym Home = Control_L NoSymbol Home
+keycode 110 = Control_L Control_L Home Home
 
 ! swap Caps_Lock and Control_L
-keysym Control_L = Caps_Lock
-keysym Caps_Lock = Control_L
+keycode 37 = Caps_Lock
+keycode 66 = Control_L
 
 ! put modifiers back so that the new keys work
 add Lock = Caps_Lock
