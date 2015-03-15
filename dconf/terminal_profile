@@ -1,0 +1,16 @@
+[/]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
+default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='rgb(238,238,236)'
+visible-name='T-Hex'
+palette=['rgb(0,43,54)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(7,54,66)', 'rgb(203,75,22)', 'rgb(115,210,22)', 'rgb(233,185,110)', 'rgb(63,147,147)', 'rgb(173,127,168)', 'rgb(147,161,161)', 'rgb(255,255,255)']
+default-size-columns=95
+default-size-rows=26
+use-system-font=true
+use-custom-default-size=true
+use-theme-colors=false
+bold-color-same-as-fg=true
+background-color='rgb(0,43,54)'
+scrollbar-policy='never'
