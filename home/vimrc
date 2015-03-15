@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 "molokai
 "A color theme (only used in gvim)
 Plugin 'tomasr/molokai'
+let g:rehash256 = 1
 
 "vim-airline
 Plugin 'bling/vim-airline'
