@@ -31,6 +31,8 @@ cnorea <expr> bw (getcmdtype() == ':' ? 'BW' : 'bd')
 cnorea <expr> bun (getcmdtype() == ':' ? 'BUN' : 'bd')
 noremap <C-TAB> :bn<CR>
 noremap <C-S-TAB> :bp<CR>
+noremap <Leader>bn :bn<CR>
+noremap <Leader>bp :bp<CR>
 
 "lusty (LustyExplorer + LustyJuggler)
 Plugin 'sjbach/lusty'
@@ -73,16 +75,6 @@ autocmd BufReadPost,BufEnter,FileType * GuessIndent
 
 "--- General coding ---
 
-"YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_invoke_completion = '<C-k>'
-noremap <F5> :YcmForceCompileAndDiagnostics<CR>
-autocmd FileType c,cpp
-	\ noremap <buffer> <Leader>e :YcmDiags<CR>
-
 "syntastic
 Plugin 'scrooloose/syntastic'
 "This must be disabled! Otherwise when openning C/C++ files,
@@ -91,6 +83,20 @@ Plugin 'scrooloose/syntastic'
 let g:syntastic_loc_list_height = 5
 let g:syntastic_python_checkers = ['flake8']
 noremap <Leader>e :Errors<CR>
+
+"YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '/home/robot/.vim/bundle/YouCompleteMe/ycm_extra_conf_default.py'
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_invoke_completion = '<C-k>'
+noremap <F5> :YcmForceCompileAndDiagnostics<CR>
+autocmd FileType c,cpp,objc,objcpp
+	\ noremap <buffer> <Leader>e :YcmDiags<CR>
+
+"tagbar
+Plugin 'majutsushi/tagbar'
+noremap <Leader>d :TagbarToggle<CR>
 
 "-- PHP --
 
@@ -115,6 +121,9 @@ let python_highlight_all = 1
 Plugin 'hynek/vim-python-pep8-indent'
 
 "-- Other languages --
+
+"vim-go
+Plugin 'fatih/vim-go'
 
 "vim-markdown (advanced support for Markdown, e.g. navigation)
 Plugin 'plasticboy/vim-markdown'
