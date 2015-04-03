@@ -101,6 +101,11 @@ autocmd FileType c,cpp,objc,objcpp
 Plugin 'majutsushi/tagbar'
 noremap <Leader>d :TagbarToggle<CR>
 
+"vim-autotag
+Plugin 'craigemery/vim-autotag'
+"search tags upwards till HOME
+set tags+=./tags;$HOME
+
 "-- PHP --
 
 "phpcomplete.vim (stronger than vim's original one)
@@ -122,6 +127,14 @@ let python_highlight_all = 1
 
 "vim-python-pep8-indent (make the indent compatible with PEP8)
 Plugin 'hynek/vim-python-pep8-indent'
+
+"-- HTML (like) --
+
+"closetag.vim (CTRL+_)
+Plugin 'closetag.vim'
+
+"MatchTagAlways
+Plugin 'Valloric/MatchTagAlways'
 
 "-- Other languages --
 
@@ -158,7 +171,7 @@ Plugin 'digitaltoad/vim-jade'
 
 "inline_edit
 "Automatically switch to other syntax inside embedded code block
-"(e.g. JavaScript in HTML)
+"(e.g. JavaScript in HTML and more!)
 Plugin 'AndrewRadev/inline_edit.vim'
 
 call vundle#end()
