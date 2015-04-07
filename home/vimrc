@@ -17,6 +17,7 @@ let g:airline_powerline_fonts = 1
 
 "vim-bufferline
 Plugin 'bling/vim-bufferline'
+let g:bufferline_echo = 0
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 1
 let g:bufferline_fixed_index = -1
@@ -96,6 +97,9 @@ let g:ycm_key_invoke_completion = '<C-k>'
 noremap <F5> :YcmForceCompileAndDiagnostics<CR>
 autocmd FileType c,cpp,objc,objcpp
 	\ noremap <buffer> <Leader>e :YcmDiags<CR>
+
+"color_coded
+Plugin 'bbchung/clighter'
 
 "tagbar
 Plugin 'majutsushi/tagbar'
@@ -205,6 +209,9 @@ set previewheight=2
 
 "Always show statusline (needed by vim-airline)
 set laststatus=2
+
+"Highlight current line
+set cursorline
 
 "Window navigation and resizing
 noremap <C-J> <C-W>j

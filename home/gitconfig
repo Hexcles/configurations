@@ -3,3 +3,5 @@
 [user]
 	name = Hexcles Ma
 	email = bob1211@gmail.com
+[merge]
+	tool = meld
