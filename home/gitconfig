@@ -5,3 +5,5 @@
 	email = bob1211@gmail.com
 [merge]
 	tool = meld
+[credential]
+	helper = /usr/lib/git-core/git-credential-gnome-keyring
