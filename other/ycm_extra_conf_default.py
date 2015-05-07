@@ -11,7 +11,6 @@ flags_c = [
     '-Wextra',
     '-Werror',
     '-Wno-variadic-macros',
-    '-fexceptions',
     '-DNDEBUG',
     '-x', 'c',
     '-std=gnu11',
@@ -46,7 +45,7 @@ def MakeRelativePathsInFlagsAbsolute(flags, working_directory):
         return flags
     new_flags = []
     make_next_absolute = False
-    path_flags = ['-isystem', '-I', '-iquote', '--sysroot=']
+    path_flags = ['-isystem', '-I', '-iquote', '--sysroot=', '-include']
     for flag in flags:
         new_flag = flag
 
@@ -72,7 +71,8 @@ def MakeRelativePathsInFlagsAbsolute(flags, working_directory):
 
 def FlagsForFile(filename):
     extension = os.path.splitext(filename)[1]
-    if extension == '.c':
+    if extension == '.c' or \
+            extension == '.h' and os.path.exists(filename[:-2] + '.c'):
         flags = flags_c
     else:
         flags = flags_cpp
