@@ -215,6 +215,12 @@ set laststatus=2
 "Highlight current line
 set cursorline
 
+"The first tab completes as much as it can, second tab displays a list of
+"options, and the third tab will present a list that allows you to scroll
+"through and select filenames beginning with that prefix.
+set wildmode=longest,list,full
+set wildmenu
+
 "Window navigation and resizing
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
