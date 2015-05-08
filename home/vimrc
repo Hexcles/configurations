@@ -72,7 +72,7 @@ Plugin 'ogier/guessindent'
 let g:guessindent_prefer_tabs = 1
 "FileType is needed since some ftplugin (e.g. Python) will override indention
 "settings
-autocmd BufReadPost,BufEnter,FileType * GuessIndent
+autocmd BufReadPost,BufEnter,FileType * GuessIndent | IndentLinesReset
 
 "--- General coding ---
 
@@ -86,7 +86,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_python_checkers = ['flake8']
-noremap <Leader>e :Errors<CR>
+noremap <Leader>e :SyntasticCheck | Errors<CR>
 
 "YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
