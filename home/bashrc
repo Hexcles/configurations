@@ -11,6 +11,9 @@ if [[ ($COLORTERM == gnome-terminal || $(cat /proc/$PPID/cmdline) == *gnome-term
 	&& $TERM != screen* ]]; then
 	export TERM=xterm-256color
 fi
+if [[ -n $TMUX && $(cat /proc/$PPID/cmdline) == tmux* ]]; then
+   export TERM="screen-256color"
+fi
 
 # Colorful ls
 alias ls='ls --color=auto'
