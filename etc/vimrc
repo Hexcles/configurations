@@ -10,23 +10,21 @@
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
 runtime! vimrc_example.vim
-runtime! macros/matchit.vim
 
 " If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-set autoindent
+set autoindent  " no need for smartindent nowadays
 set smarttab
 set ignorecase
-set smartcase
+set smartcase 	" only useful when combined with ignorecase
 set wrapscan
-set noincsearch
 set modeline
-set hidden
+set hidden 	" enable buffer
 set confirm
-set noundofile
+set noundofile 	" dont't use system-wide undo file
 
 noremap <Down> gj
 noremap <Up> gk

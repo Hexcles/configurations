@@ -139,7 +139,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 "closetag.vim (CTRL+_)
 Plugin 'closetag.vim'
 
-"MatchTagAlways
+"MatchTagAlways (high light tags)
 Plugin 'Valloric/MatchTagAlways'
 
 "-- Other languages --
@@ -185,6 +185,9 @@ filetype plugin indent on
 "end Vundle
 
 "--- Non-plugin settings ---
+
+"enable tag matching for % jump
+runtime! macros/matchit.vim
 
 "Use molokai for colorful terminals
 "(This has to be after Vundle section ends, otherwise cannot find scheme.)
