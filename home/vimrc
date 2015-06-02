@@ -26,7 +26,7 @@ let g:bufferline_fixed_index = -1
 Plugin 'Lokaltog/vim-easymotion'
 
 "bufkill.vim (Keep window layout when killing buffers)
-Plugin 'bufkill.vim'
+Plugin 'qpkorr/vim-bufkill'
 cnorea <expr> bd (getcmdtype() == ':' ? 'BD' : 'bd')
 cnorea <expr> bw (getcmdtype() == ':' ? 'BW' : 'bd')
 cnorea <expr> bun (getcmdtype() == ':' ? 'BUN' : 'bd')
@@ -34,6 +34,8 @@ noremap <C-TAB> :bn<CR>
 noremap <C-S-TAB> :bp<CR>
 noremap <Leader>bn :bn<CR>
 noremap <Leader>bp :bp<CR>
+"exclude quickfix from buffer list
+autocmd FileType qf set nobuflisted
 
 "lusty (LustyExplorer + LustyJuggler)
 Plugin 'sjbach/lusty'
@@ -95,10 +97,14 @@ let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-k>'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 noremap <Leader>r :YcmForceCompileAndDiagnostics<CR>
 noremap <F5> :YcmForceCompileAndDiagnostics<CR>
 autocmd FileType c,cpp,objc,objcpp
 	\ noremap <buffer> <Leader>e :YcmDiags<CR>
+autocmd FileType c,cpp,objc,objcpp,python,cs
+	\ noremap <buffer> gD :YcmCompleter GoTo<CR>
 
 "color_coded
 Plugin 'bbchung/clighter'
