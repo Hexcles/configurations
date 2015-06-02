@@ -56,7 +56,7 @@ au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 "vim-table-mode (toggled by \tm, and then start a line with ||)
 Plugin 'dhruvasagar/vim-table-mode'
 
-"vim-commentary
+"vim-commentary (gc)
 Plugin 'tpope/vim-commentary'
 
 "ag.vim
@@ -112,6 +112,9 @@ Plugin 'craigemery/vim-autotag'
 "search tags upwards till HOME
 set tags+=./tags;$HOME
 
+"lid.vim
+Plugin 'yegappan/lid'
+
 "-- PHP --
 
 "phpcomplete.vim (stronger than vim's original one)
@@ -119,9 +122,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 
 "php-doc-upgrade (PHPDoc)
 Plugin 'php-doc-upgrade'
-let g:pdv_cfg_Author="Hexcles Ma <bob1211(at)gmail(dot)com>"
-let g:pdv_cfg_Copyright="2014"
-let g:pdv_cfg_License="Proprietary"
 au FileType php
 	\ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
 	\ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
