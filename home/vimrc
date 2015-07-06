@@ -241,4 +241,4 @@ noremap <A-k> <C-W>+
 noremap <A-l> <C-w>>
 
 "Quick nohighlight
-noremap \<Enter> :nohlsearch<Enter>
+noremap /<Enter> :nohlsearch<Enter>
