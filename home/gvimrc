@@ -1,6 +1,6 @@
 "set background=dark
 colorscheme molokai
-set guifont=Monospace\ 13
+set guifont=Monospace\ 12
 set lines=35 columns=110
 set nobackup
 set expandtab
@@ -10,6 +10,7 @@ set winaltkeys=no
 set guioptions-=T
 
 let g:bufferline_rotate = 2
+let g:color_coded_enabled = 1
 
 autocmd VimEnter * NERDTree
 

@@ -74,8 +74,8 @@ Plugin 'ogier/guessindent'
 let g:guessindent_prefer_tabs = 1
 "FileType is needed since some ftplugin (e.g. Python) will override indention
 "settings
-autocmd BufReadPost,BufEnter,FileType * GuessIndent | IndentLinesReset
-command -nargs=1 SW set shiftwidth=<args> | IndentLinesReset
+autocmd BufReadPost,FileReadPost * GuessIndent | IndentLinesReset
+command -nargs=1 SW setlocal shiftwidth=<args> | IndentLinesReset
 
 "--- General coding ---
 
@@ -108,7 +108,9 @@ autocmd FileType c,cpp,objc,objcpp,python,cs
 	\ noremap <buffer> gD :YcmCompleter GoTo<CR>
 
 "color_coded
-Plugin 'bbchung/clighter'
+Plugin 'jeaye/color_coded'
+let g:color_coded_enabled = 0
+"Plugin 'bbchung/clighter'
 
 "tagbar
 Plugin 'majutsushi/tagbar'
