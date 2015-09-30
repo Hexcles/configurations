@@ -14,9 +14,6 @@ export LANG=zh_CN.UTF-8
 # Force wine in 32bit
 export WINEARCH=win32
 
-# Force Firefox using OMTC
-#export MOZ_USE_OMTC=1
-
 # VDPAU for Intel
 export VDPAU_DRIVER=va_gl
 
