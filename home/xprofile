@@ -1,9 +1,6 @@
 #!/bin/sh
 # ~/.xprofile
 
-# Setting up language for X
-export LANG=zh_CN.UTF-8
-
 # Setting up input method(fcitx)
 #export XIM=fcitx
 #export XIM_PROGRAM=fcitx

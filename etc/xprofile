@@ -5,5 +5,5 @@ export GDK_USE_XFT=1
 export QT_XFT=true
 
 # Setting up font configurations for JAVA
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true"
 export JAVA_FONTS=/usr/share/fonts/TTF
