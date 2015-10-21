@@ -74,7 +74,7 @@ Plugin 'ogier/guessindent'
 let g:guessindent_prefer_tabs = 1
 "FileType is needed since some ftplugin (e.g. Python) will override indention
 "settings
-autocmd BufReadPost,FileReadPost * GuessIndent | IndentLinesReset
+autocmd BufReadPost,FileReadPost,FileType * GuessIndent | IndentLinesReset
 command -nargs=1 SW setlocal shiftwidth=<args> | IndentLinesReset
 
 "--- General coding ---
