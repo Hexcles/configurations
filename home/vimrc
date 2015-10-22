@@ -69,12 +69,14 @@ Plugin 'rking/ag.vim'
 "indentLine (show indent lines)
 Plugin 'Yggdroot/indentLine'
 
-"guessindent (guess indent method based on files)
-Plugin 'ogier/guessindent'
-let g:guessindent_prefer_tabs = 1
-"FileType is needed since some ftplugin (e.g. Python) will override indention
-"settings
-autocmd BufReadPost,FileReadPost,FileType * GuessIndent | IndentLinesReset
+"vim-sleuth (automatically detect buffer indentation: shiftwidth & expandtab)
+Plugin 'tpope/vim-sleuth'
+
+"Reset indent line after automatic detection
+"A workaround to defer setting this autocmd, so that it's after sleuth.
+autocmd VimEnter * autocmd FileType * IndentLinesReset
+
+"Wrapper to manually adjust shiftwidth
 command -nargs=1 SW setlocal shiftwidth=<args> | IndentLinesReset
 
 "--- General coding ---
