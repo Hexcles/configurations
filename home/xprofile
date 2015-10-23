@@ -1,6 +1,9 @@
 #!/bin/sh
 # ~/.xprofile
 
+# Override LC_MESSAGES to Chinese in X
+export LC_MESSAGES=zh_CN.UTF-8
+
 # Setting up input method(fcitx)
 #export XIM=fcitx
 #export XIM_PROGRAM=fcitx
