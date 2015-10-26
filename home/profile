@@ -1,3 +1,4 @@
 #!/bin/sh
 export GOPATH=~/studio/Go/
 export PATH=$PATH:~/bin/linaro/bin/
+source ~/.aliases.sh

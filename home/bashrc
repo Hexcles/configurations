@@ -16,14 +16,7 @@ if [[ -n $TMUX && $(cat /proc/$PPID/cmdline) == tmux* &&
         export TERM="screen-256color"
 fi
 
-# Colorful ls
-alias ls='ls --color=auto'
-
-# Colorful grep
-alias grep='grep --color=auto'
-
-# My other shortcut scripts
-source ~/bin/aliases.sh
+source ~/.aliases.sh
 
 # Bash powerline
 source ~/bin/bash-powerline/bash-powerline.sh
