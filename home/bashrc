@@ -16,6 +16,7 @@ if [[ -n $TMUX && $(cat /proc/$PPID/cmdline) == tmux* &&
         export TERM="screen-256color"
 fi
 
+# This has to be set in both .profile and .bashrc (see Bash INVOCATION).
 source ~/.aliases.sh
 
 # Bash powerline
