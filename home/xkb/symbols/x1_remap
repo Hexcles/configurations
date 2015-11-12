@@ -1,0 +1,7 @@
+partial default
+xkb_symbols "custom" {
+	replace key	<ESC>	{ [ Escape, asciitilde ] };
+	replace key	<RALT>	{ [ Home ]   };
+	replace key	<HOME>	{ [ Control_L ] };
+	modifier_map	Control { <HOME> };
+};
