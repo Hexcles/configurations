@@ -12,7 +12,11 @@ set guioptions-=T
 "let g:bufferline_rotate = 2
 let g:color_coded_enabled = 1
 
-autocmd VimEnter * NERDTree
+"Open NERDTree at current directory (if no file is opened at startup, it will
+"fall back to home). Also, because of NERDTreeChDirMode=2, the working
+"directory of vim will also be changed accordingly.
+"Finally, switch to the right window.
+autocmd VimEnter * NERDTree %:p:h | wincmd l
 
 "Force prompt before quit (by :q) under GUI
 function! QuitPrompt()
