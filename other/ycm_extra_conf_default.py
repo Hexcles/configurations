@@ -2,14 +2,14 @@
 import os
 
 # Attention:
-# File path (starting with / or .) will be expanded.
-# Thus do not write things like '-i /path/to/somefile'.
+# File path not starting with '/' will be expanded.
 # Besides, the expansion starts from this config file!
+# Thus do not write things like '-i path/to/somefile'.
 
 flags_c = [
     '-Wall',
     '-Wextra',
-    '-Werror',
+#    '-Werror',
     '-Wno-variadic-macros',
     '-DNDEBUG',
     '-x', 'c',
@@ -21,16 +21,16 @@ flags_c = [
 flags_cpp = [
     '-Wall',
     '-Wextra',
-    '-Werror',
+#    '-Werror',
     '-Wno-variadic-macros',
     '-fexceptions',
     '-DNDEBUG',
     '-x', 'c++',
-    '-std=gnu++11',
+    '-std=gnu++14',
     '-stdlib=libstdc++',
-    '-isystem', '/usr/include/c++/4.9.2',
-    '-isystem', '/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu',
-    '-isystem', '/usr/include/c++/4.9.2/backward',
+    '-isystem', '/usr/include/c++/5.2.0',
+    '-isystem', '/usr/include/c++/5.2.0/x86_64-unknown-linux-gnu',
+    '-isystem', '/usr/include/c++/5.2.0/backward',
     '-isystem', '/usr/local/include',
     '-isystem', '/usr/include',
 ]
