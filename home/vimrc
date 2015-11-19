@@ -11,6 +11,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tomasr/molokai'
 let g:rehash256 = 1
 
+"vim-twilight
+Plugin 'matthewtodd/vim-twilight.git'
+
 "vim-airline
 Plugin 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
@@ -111,8 +114,12 @@ autocmd FileType c,cpp,objc,objcpp,python,cs
 
 "color_coded
 Plugin 'jeaye/color_coded'
-let g:color_coded_enabled = 0
-"Plugin 'bbchung/clighter'
+"Highlight settings
+"We have to use autocmd, because any colorscheme will run 'hl clear'.
+autocmd VimEnter * hi Member ctermfg=171 cterm=bold guifg=#d75fff gui=italic
+autocmd VimEnter * hi Namespace guifg=#deb96e
+"Yet links are fine.
+hi link Variable Identifier
 
 "tagbar
 Plugin 'majutsushi/tagbar'
