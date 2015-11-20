@@ -117,7 +117,7 @@ Plugin 'jeaye/color_coded'
 "Highlight settings
 "We have to use autocmd, because any colorscheme will run 'hl clear'.
 autocmd VimEnter * hi Member ctermfg=171 cterm=bold guifg=#d75fff gui=italic
-autocmd VimEnter * hi Namespace guifg=#deb96e
+autocmd VimEnter * hi Namespace ctermfg=179 guifg=#deb96e
 "Yet links are fine.
 hi link Variable Identifier
 
