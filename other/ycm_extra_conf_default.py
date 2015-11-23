@@ -97,8 +97,8 @@ def GetCompilationInfoForFile(filename):
             if os.path.exists(replacement_file):
                 compilation_info = \
                     database.GetCompilationInfoForFile(replacement_file)
-            if compilation_info.compiler_flags_:
-                return compilation_info
+                if compilation_info.compiler_flags_:
+                    return compilation_info
         return None
     return database.GetCompilationInfoForFile(filename)
 
