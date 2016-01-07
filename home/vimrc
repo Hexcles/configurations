@@ -114,6 +114,7 @@ autocmd FileType c,cpp,objc,objcpp,python,cs
 
 "color_coded
 Plugin 'jeaye/color_coded'
+let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'cuda']
 "Highlight settings
 "We have to use autocmd, because any colorscheme will run 'hl clear'.
 autocmd VimEnter * hi Member ctermfg=170 guifg=#d75fd7 gui=italic
@@ -254,3 +255,6 @@ noremap <A-l> <C-w>>
 
 "Quick nohighlight
 noremap /<Enter> :nohlsearch<Enter>
+
+"Some uncommon file extensions
+autocmd BufRead,BufNewFile *.cuh set filetype=cuda
