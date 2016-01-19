@@ -194,6 +194,9 @@ Plugin 'django.vim'
 "vim-jade
 Plugin 'digitaltoad/vim-jade'
 
+"llvm.vim
+Plugin 'Hexcles/llvm.vim'
+
 "inline_edit
 "Automatically switch to other syntax inside embedded code block
 "(e.g. JavaScript in HTML and more!)
