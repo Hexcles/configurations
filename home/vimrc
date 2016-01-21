@@ -261,3 +261,4 @@ noremap /<Enter> :nohlsearch<Enter>
 
 "Some uncommon file extensions
 autocmd BufRead,BufNewFile *.cuh set filetype=cuda
+autocmd BufRead,BufNewFile *.pablo set filetype=python
