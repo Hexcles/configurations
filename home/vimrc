@@ -58,7 +58,7 @@ Plugin 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_balance_matchpairs = 1
-au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+autocmd FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 
 "vim-table-mode (toggled by \tm, and then start a line with ||)
 Plugin 'dhruvasagar/vim-table-mode'
@@ -143,7 +143,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 
 "php-doc-upgrade (PHPDoc)
 Plugin 'php-doc-upgrade'
-au FileType php
+autocmd FileType php
 	\ nnoremap <buffer> <Leader>p :call PhpDocSingle()<CR> |
 	\ vnoremap <buffer> <Leader>p :call PhpDocRange()<CR>
 
