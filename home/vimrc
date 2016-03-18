@@ -18,6 +18,7 @@ Plugin 'matthewtodd/vim-twilight.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
+let g:airline_exclude_preview = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'long' ]
 
 "vim-bufferline
@@ -172,8 +173,8 @@ Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 autocmd FileType markdown
-	\ set tw=100 |
-	\ set spell
+	\ setl tw=100 |
+	\ setl spell
 
 "vim-css3-syntax (full CSS3 support including partial Scss)
 Plugin 'hail2u/vim-css3-syntax'
