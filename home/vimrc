@@ -172,8 +172,11 @@ Plugin 'fatih/vim-go'
 "vim-markdown (advanced support for Markdown, e.g. navigation)
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
 autocmd FileType markdown
-	\ setl tw=100 |
+	\ setl tw=90 |
 	\ setl spell
 
 "vim-css3-syntax (full CSS3 support including partial Scss)
