@@ -1,7 +1,7 @@
 colorscheme molokai
 set guifont=Monospace\ 12
 "Only needed when we have Source Han Sans in monospace:
-set linespace=-5
+set linespace=-1
 set lines=35 columns=110
 set nobackup
 set expandtab
