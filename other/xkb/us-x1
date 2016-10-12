@@ -1,0 +1,11 @@
+default partial
+xkb_symbols "us-x1" {
+	include "us(basic)"
+	include "level3(ralt_switch)"
+	name[Group1] = "English (ThinkPad X1 Carbon)";
+
+	replace key <ESC> { [ Escape, asciitilde ] };
+	replace key <HOME> { [ Control_L, Control_L, Home, Home ] };
+	replace key <LCTL> { [ Caps_Lock ] };
+	modifier_map Control { <HOME> };
+};

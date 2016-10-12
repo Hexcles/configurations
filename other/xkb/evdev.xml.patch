@@ -1,0 +1,35 @@
+--- evdev.original.xml	2016-10-11 20:17:22.218372445 -0700
++++ evdev.xml	2016-10-11 20:25:32.707397015 -0700
+@@ -1311,6 +1311,32 @@
+     </model>
+   </modelList>
+   <layoutList>
++    <!-- Custom layouts start -->
++    <layout>
++      <configItem>
++        <name>us-ctrlcaps</name>
++        <shortDescription>en</shortDescription>
++        <description>English (Ctrl-CapsLock swapped)</description>
++        <languageList>
++          <iso639Id>eng</iso639Id>
++        </languageList>
++      </configItem>
++      <variantList>
++      </variantList>
++    </layout>
++    <layout>
++      <configItem>
++        <name>us-x1</name>
++        <shortDescription>en</shortDescription>
++        <description>English (X1 Carbon)</description>
++        <languageList>
++          <iso639Id>eng</iso639Id>
++        </languageList>
++      </configItem>
++      <variantList>
++      </variantList>
++    </layout>
++    <!-- Custom layouts end -->
+     <layout>
+       <configItem>
+         <name>us</name>

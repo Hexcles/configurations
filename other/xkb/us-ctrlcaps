@@ -1,0 +1,8 @@
+default partial
+xkb_symbols "us-ctrlcaps" {
+	include "us(basic)"
+	name[Group1] = "English (Swap Ctrl and Caps Lock)";
+
+	replace key <CAPS> { [ Control_L ] };
+	replace key <LCTL> { [ Caps_Lock ] };
+};

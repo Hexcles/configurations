@@ -11,7 +11,6 @@ alias grep='grep --color=auto'
 alias ll='ls -l'
 
 # Handy shortcuts
-alias remapkey='~/.xkb/mapkey.sh'
 alias open='xdg-open'
 alias douban.fm='python2 ~/studio/douban.fm/douban/douban.py'
 alias canvas_decode='~/bin/canvas_urldecode.py'
