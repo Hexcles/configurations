@@ -1,0 +1,8 @@
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+EIDTOR=vim
+SAL_USE_VCLPLUGIN=gtk
+MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins

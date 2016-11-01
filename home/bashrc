@@ -16,6 +16,12 @@ if [[ -n $TMUX && $(cat /proc/$PPID/cmdline) == tmux* &&
         export TERM="screen-256color"
 fi
 
+# Wayland does not source the profile upon login, so we need to imitate the
+# traditional behaivour this way in bashrc.
+if [[ -n $WAYLAND_DISPLAY ]]; then
+        . /etc/profile
+fi
+
 # Colorful less
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'
