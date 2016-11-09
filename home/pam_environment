@@ -6,3 +6,4 @@
 EIDTOR=vim
 SAL_USE_VCLPLUGIN=gtk
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
+VDPAU_DRIVER=va_gl
