@@ -7,11 +7,11 @@
 
 # Colorful $TERM (be careful with screen/tmux!)
 # (Must before bash-powerline)
-if [[ ($COLORTERM == gnome-terminal || $(cat /proc/$PPID/cmdline) == *gnome-terminal* )
+if [[ ($COLORTERM == gnome-terminal || $(< /proc/$PPID/cmdline tr -d \\0) == *gnome-terminal* )
 	&& $TERM != screen* ]]; then
 	export TERM=xterm-256color
 fi
-if [[ -n $TMUX && $(cat /proc/$PPID/cmdline) == tmux* &&
+if [[ -n $TMUX && $(< /proc/$PPID/cmdline tr -d \\0) == tmux* &&
         $(tmux showenv -g TERM) == *256color ]]; then
         export TERM="screen-256color"
 fi
