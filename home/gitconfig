@@ -1,5 +1,5 @@
 [push]
-	default = simple
+	default = current
 [user]
 	name = Robert Ma (Hexcles)
 	email = bob1211@gmail.com
