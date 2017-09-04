@@ -162,7 +162,7 @@ autocmd FileType php
 let python_highlight_all = 1
 
 "vim-python-pep8-indent (make the indent compatible with PEP8)
-Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 "-- HTML (like) --
 
