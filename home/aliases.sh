@@ -14,5 +14,3 @@ alias ll='ls -l'
 alias open='xdg-open'
 alias douban.fm='python2 ~/studio/douban.fm/douban/douban.py'
 alias canvas_decode='~/bin/canvas_urldecode.py'
-
-alias matlab='LANG=en_US.UTF-8 /opt/MATLAB/bin/matlab 2>/dev/null ; rm -f ~/java.log.*'
