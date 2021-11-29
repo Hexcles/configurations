@@ -2,8 +2,9 @@
 # ~/.profile
 #
 
-export GOPATH=~/studio/Go/
-export PATH=$PATH:~/bin/linaro/bin/
+export GOPATH=~/studio/Go
+#export PATH=$PATH:~/bin/linaro/bin/
+export PATH=$PATH:$GOPATH/bin:~/.cargo/bin
 # This has to be set in both .profile and .bashrc (see Bash INVOCATION).
 # (Aliases will not inherited by sub shells.)
 source ~/.aliases.sh
