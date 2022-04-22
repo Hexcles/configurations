@@ -251,7 +251,7 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 "Set a very short keycode timeout so that <A-x> will not be confused with <ESC>x
-set ttimeout ttimeoutlen=50
+set ttimeout ttimeoutlen=20
 
 "persistent undo
 set undofile
